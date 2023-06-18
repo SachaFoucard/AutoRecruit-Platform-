@@ -1,45 +1,44 @@
 const mongoose = require('mongoose');
 
-const schema = new mongoose.Schema(
-    {
-        firstname: {
-            type: String,
-            require: true
-        },
-        lastname: {
-            type: String,
-            require: true
-        },
-        mail: {
-            type: String,
-            require: true,
-        },
-        city: {
-            type: String,
-            require: true
-        },
-        state: {
-            type: String,
-            require: true
-        },
-        codepostal: {
-            type: String,
-            require: true
-        },
-        phone: {
-            type: String,
-            require: true
-        },
-        adress: {
-            type: String,
-            require: true
-        },
-        resume: {
-            name: String,
-            data: Buffer,
-            contentType: String,
-        }
-    });
-const UserModel = mongoose.model('users', schema);
+const schema = new mongoose.Schema({
+  firstname: {
+    type: String,
+    required: true // Use 'required' instead of 'require'
+  },
+  lastname: {
+    type: String,
+    required: true
+  },
+  mail: {
+    type: String,
+    required: true
+  },
+  city: {
+    type: String,
+    required: true
+  },
+  state: {
+    type: String,
+    required: true
+  },
+  codepostal: {
+    type: String,
+    required: true
+  },
+  phone: {
+    type: String,
+    required: true
+  },
+  address: { // Correct the property name from 'adress' to 'address'
+    type: String,
+    required: true
+  },
+  resume: {
+    type: String,
+    required: false
+  }
+});
+
+const UserModel = mongoose.model('User', schema); // Use 'User' as the model name instead of 'users'
 
 module.exports = UserModel;

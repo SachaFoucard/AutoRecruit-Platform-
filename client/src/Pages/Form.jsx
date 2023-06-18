@@ -188,6 +188,7 @@ export default function Form() {
                 </Grid>
                 <input className='cv'
                     type="file"
+                    name='resume'
                     id="resume-upload"
                     accept=".png,.pdf"
                     onChange={(e) => setResumeFile(e.target.value)}
