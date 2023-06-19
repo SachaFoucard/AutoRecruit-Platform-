@@ -38,7 +38,7 @@ module.exports.Register = async (req, res) => {
     }
 };
 
-module.exports.Print = async (req, res) => {
+module.exports.PrintCandidates = async (req, res) => {
     let { jobNumb } = req.query; // Retrieve jobNumb from query parameters
 
     if (jobNumb == 0) {
@@ -50,8 +50,7 @@ module.exports.Print = async (req, res) => {
     }
 };
 
-
-module.exports.Login = async (req, res) => {
+module.exports.LoginHR = async (req, res) => {
     try {
         let { username, password } = req.body;
         let user = await HRModel.findOne({ username: username, password: password })
@@ -63,9 +62,3 @@ module.exports.Login = async (req, res) => {
     }
 };
 
-module.exports.PositionFor = async (req, res) => {
-
-
-
-    res.status(201).json(users)
-}
