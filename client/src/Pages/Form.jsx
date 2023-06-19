@@ -23,19 +23,14 @@ export default function Form() {
     const [resume, setResumeFile] = useState(null);
     const [mail, setmail] = useState()
     const [jobPosition, setJobPosition] = useState([]);
+    const [linkedin, setLinkedin] = useState();
+    const [github, setGithub] = useState();
+    const [jobID, setJobID] = useState();
+
 
 
     const SendForm = async () => {
-        console.log("firstname", firstname);
-        console.log("lastname", lastname);
-        console.log("city", city);
-        console.log("codepostal", codepostal);
-        console.log("state", state);
-        console.log("phone", phone);
-        console.log("mail", mail);
-        console.log("adress", address);
-        console.log("resume", resume);
-
+        setJobID(id)
         let response = await fetch('http://localhost:8000/api/register', {
             method: 'POST',
             headers: {
@@ -50,7 +45,10 @@ export default function Form() {
                 resume,
                 phone,
                 address,
-                codepostal
+                codepostal,
+                linkedin,
+                github,
+                jobID
             })
         });
 
@@ -184,6 +182,32 @@ export default function Form() {
                         autoComplete="shipping country"
                         variant="standard"
                         onChange={(e) => setstate(e.target.value)}
+                    />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <TextField
+                        required
+                        id="linkedin"
+                        name="linkedin"
+                        label="Linkedin link"
+                        fullWidth
+                        type='string'
+                        autoComplete="linkedin"
+                        variant="standard"
+                        onChange={(e) => setLinkedin(e.target.value)}
+                    />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <TextField
+                        required
+                        id="github"
+                        name="github"
+                        label="github link"
+                        fullWidth
+                        type='string'
+                        autoComplete="github"
+                        variant="standard"
+                        onChange={(e) => setGithub(e.target.value)}
                     />
                 </Grid>
                 <input className='cv'

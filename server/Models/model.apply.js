@@ -36,9 +36,20 @@ const schema = new mongoose.Schema({
   resume: {
     type: String,
     required: false
+  },
+  linkedin:{
+    type: String,
+    required: false
+  },
+  github:{
+    type: String,
+    required: false
+  },
+  jobID:{
+    type:String,
   }
 });
 
-const UserModel = mongoose.model('User', schema); // Use 'User' as the model name instead of 'users'
+const UserModel = mongoose.model('users', schema); // Use 'User' as the model name instead of 'users'
 
 module.exports = UserModel;

@@ -23,23 +23,25 @@ function Header(props) {
     const { onDrawerToggle } = props;
     const [users, setUsers] = useState([]);
 
-    const GetUsers = async () => {
-        let data = await fetch('http://localhost:8000/api/printUsers', {
+    const [jobNumb, setJobNumb] = useState(0);
+
+    const getUsers = async () => {
+        let data = await fetch(`http://localhost:8000/api/printUsers?jobNumb=${jobNumb}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             }
-        })
-        let res = await data.json()
+        });
+        let res = await data.json();
         setUsers(res);
-    }
+    };
 
     useEffect(() => {
-        GetUsers();
-    }, [users])
-
-    { console.log(users); }
-
+        getUsers();
+    }, [jobNumb]);
+{
+    console.log(jobNumb);
+}
     return (
         <React.Fragment>
             <AppBar color="primary" position="sticky" elevation={0}>
@@ -123,11 +125,14 @@ function Header(props) {
                 </Toolbar>
             </AppBar>
             <AppBar component="div" position="static" elevation={0} sx={{ zIndex: 0 }}>
-                <Tabs value={0} textColor="inherit">
-                    <Tab label="Users" onClick={() => console.log('users')} />
-                    <Tab label="Sign-in method" />
-                    <Tab label="Templates" />
-                    <Tab label="Usage" />
+                <Tabs value={jobNumb} textColor="inherit">
+                    <Tab label="All" onClick={() => setJobNumb(0)} />
+                    <Tab label="Project Manager" onClick={() => setJobNumb(1)} />
+                    <Tab label="Senior Fullstack" onClick={() => setJobNumb(2)} />
+                    <Tab label="Frontend Developer" onClick={() => setJobNumb(3)} />
+                    <Tab label="Support Specialist" onClick={() => setJobNumb(4)} />
+                    <Tab label="Junior Designer" onClick={() => setJobNumb(5)} />
+                    <Tab label="Junior Backend Developer" onClick={() => setJobNumb(6)} />
                 </Tabs>
             </AppBar>
             <div>

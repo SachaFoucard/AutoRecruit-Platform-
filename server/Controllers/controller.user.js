@@ -2,7 +2,8 @@ const UserModel = require('../Models/model.apply');
 const HRModel = require('../Models/model.hr');
 
 module.exports.Register = async (req, res) => {
-    let { firstname, lastname, mail, city, state, phone, address, codepostal, resume } = req.body;
+    let { firstname, lastname, mail, city, state, phone, address, codepostal, resume, linkedin, github } = req.body;
+    let { jobID } = req.body;
 
     try {
         let newUser = new UserModel({
@@ -14,12 +15,15 @@ module.exports.Register = async (req, res) => {
             resume,
             address,
             phone,
-            codepostal
+            codepostal,
+            linkedin,
+            github,
+            jobID
         });
 
         let alreadyApply = await UserModel.findOne({ mail: newUser.mail }) // check if user has already apply
 
-        if (!alreadyApply && firstname && lastname && mail && city && state && resume && phone && address && codepostal) {
+        if (!alreadyApply && firstname && lastname && mail && city && state && resume && phone && address && codepostal, github, linkedin) {
             await newUser.save();
             res.status(201).json(newUser);
         }
@@ -35,11 +39,14 @@ module.exports.Register = async (req, res) => {
 };
 
 module.exports.Print = async (req, res) => {
-    try {
-        let users = await UserModel.find({})
-        res.status(201).json(users)
-    } catch (error) {
-        res.status(404).json(error)
+    let { jobNumb } = req.query; // Retrieve jobNumb from query parameters
+
+    if (jobNumb == 0) {
+        const users = await UserModel.find({});
+        res.status(200).json(users);
+    } else {
+        const users = await UserModel.find({ jobID: jobNumb });
+        res.status(200).json(users);
     }
 };
 
@@ -47,11 +54,18 @@ module.exports.Print = async (req, res) => {
 module.exports.Login = async (req, res) => {
     try {
         let { username, password } = req.body;
-        let user = await HRModel.findOne({ username: username, password:password})
+        let user = await HRModel.findOne({ username: username, password: password })
         if (user) {
             res.status(201).json(user);
         }
     } catch (error) {
         res.status(401).json({ message: 'hr not found' })
     }
+};
+
+module.exports.PositionFor = async (req, res) => {
+
+
+
+    res.status(201).json(users)
 }

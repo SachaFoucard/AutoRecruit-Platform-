@@ -13,8 +13,8 @@ const UserDataDashboard = ({ users }) => {
           <th style={styles.header}>State</th>
           <th style={styles.header}>Postal Code</th>
           <th style={styles.header}>Phone</th>
-          <th style={styles.header}>Resume</th>
-          <th style={styles.header}>Answer</th>
+          <th style={styles.header}>Linkedin</th>
+          <th style={styles.header}>Github</th>
         </tr>
       </thead>
       <tbody>
@@ -27,6 +27,8 @@ const UserDataDashboard = ({ users }) => {
             <td style={styles.cell}>{user.codepostal}</td>
             <td style={styles.cell}>{user.phone}</td>
             <td style={styles.cell}>{user.resume}</td>
+            <td style={styles.cell}>{user.linkedin}</td>
+            <td style={styles.cell}>{user.github}</td>
             <td style={styles.cell}>
               <button><FontAwesomeIcon icon={faSquareCheck} style={{ color: '#6ee52e' }} /></button>
               <button><FontAwesomeIcon icon={faClose} /></button>
