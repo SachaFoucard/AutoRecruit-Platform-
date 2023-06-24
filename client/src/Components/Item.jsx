@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Navigate } from 'react-router-dom'
 import data from '../../public/data/positions.json'
 import logo from '../assets/diamond.png'
 
 function Item() {
-
     const { id } = useParams()
     const nav = useNavigate()
     const [job, setJob] = useState([]);

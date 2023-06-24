@@ -2,7 +2,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+
   text-decoration: inherit;
 }
 
@@ -33,7 +33,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: rgb(207, 206, 215);
-  color: rgb(44, 43, 44);
+  color: rgb(24, 24, 24);
 }
 
 .apply {
@@ -134,4 +134,13 @@ input {
 }
 .header-Welcome h2{
   text-align: center;
+}
+
+.recruiters li a{
+  font-size: 30px;
+  text-decoration: none;
+  color: rgb(8, 23, 239);
+}
+.recruiters li a:hover{
+  color: rgb(122, 104, 238);
 }

@@ -47,6 +47,7 @@ const schema = new mongoose.Schema({
   },
   jobID:{
     type:String,
+    required: true
   }
 });
 

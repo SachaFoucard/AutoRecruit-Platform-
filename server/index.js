@@ -14,9 +14,12 @@ MongoDBConnect();
 app.use(cors());
 
 app.use('/api', require('./Routes/route.apply'));
+app.use('/api',require('./Routes/route.email'));
+
 
 try {
   app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
 } catch (error) {
   console.log(error);
 }
+
