@@ -13,3 +13,8 @@ The user interface is designed using React.js and CSS, providing an intuitive an
 Overall, this HR project showcases my ability to develop a complete solution for managing job applications, leveraging modern technologies to streamline the recruitment process and improve communication between recruiters and applicants."
 
 Feel free to customize and modify the description as per your project's specific details and accomplishments.
+
+
+https://github.com/SachaFoucard/hrproject/assets/94567706/6ae231a8-bec5-49ba-8857-7af7963a568b
+
+
