@@ -1,7 +1,7 @@
-# HR Management
+# HR Management Interface
  
  # Description 
-
+ 
 In my HR project, I created a comprehensive HR dashboard management system. This platform allows users to apply for multiple job positions, while recruiters can efficiently manage and review the applications along with the applicants' information. The application provides recruiters with an interface to track and monitor the progress of candidates throughout the recruitment process.
 
 The project utilizes a modern tech stack, including Mongoose, Express.js, React.js, CSS, Material UI, bcrypt, Nodemailer, and Node.js. The combination of these technologies ensures a robust and secure system. User authentication and password encryption are implemented using bcrypt, providing enhanced security for user data.
