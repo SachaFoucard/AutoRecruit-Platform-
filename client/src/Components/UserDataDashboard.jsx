@@ -15,7 +15,7 @@ const UserDataDashboard = ({ users }) => {
 
   const SendMailAccepted = async (to) => {
     try {
-      let response = await fetch('https://hr-management-870j.onrender.com/api/sendMailAccepted', {
+      let response = await fetch('http://localhost:8000/api/sendMailAccepted', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const UserDataDashboard = ({ users }) => {
 
   const SendMailRefused = async (to) => {
     try {
-      let response = await fetch('https://hr-management-870j.onrender.com/api/sendMailRefused', {
+      let response = await fetch('http://localhost:8000/api/sendMailRefused', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

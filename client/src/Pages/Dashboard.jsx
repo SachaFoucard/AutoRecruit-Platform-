@@ -22,7 +22,7 @@ function Header() {
 
   const getUsers = async (jobNumb) => {
     try {
-      const response = await fetch(`https://hr-management-870j.onrender.com/api/printUsers?jobNumb=${jobNumb}`, {
+      const response = await fetch(`http://localhost:8000/api/printUsers?jobNumb=${jobNumb}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

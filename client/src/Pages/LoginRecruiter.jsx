@@ -30,7 +30,7 @@ export default function LoginRecruiter() {
   
   const ConnectHR = async () => {
     try {
-      const response = await fetch('https://hr-management-870j.onrender.com/api/HRLogin', {
+      const response = await fetch('http://localhost:8000/api/HRLogin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
