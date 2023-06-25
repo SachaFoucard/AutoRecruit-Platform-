@@ -30,7 +30,7 @@ export default function Form() {
 
     const SendForm = async () => {
         setJobID(id)
-        let response = await fetch('http://localhost:8000/api/register', {
+        let response = await fetch('https://hr-management-870j.onrender.com/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
