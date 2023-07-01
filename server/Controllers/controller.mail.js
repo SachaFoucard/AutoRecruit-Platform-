@@ -38,7 +38,7 @@ module.exports.EmailRefused = async (req, res) => {
         port: 587, // 587 -> TLS & 465 -> SSL
         auth: {
             user: 'sachafoucard8@gmail.com', // email de votre compte Google
-            pass: 'lhdblvgjrpzdibsn', // password de votre compte Google
+            pass: 'process.env.MAILPASS', // password de votre compte Google
         },
     });
 
