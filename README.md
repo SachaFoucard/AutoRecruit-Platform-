@@ -4,7 +4,7 @@
 bcrypt, Mongoose, express, nodemailer, dotenv, nodemon, cors, dotenv
 
 ### FrontEnd :
-React JS, Material UI, 
+React JS, Material UI,  
   
 # Description :
 In my HR project, I created a comprehensive HR dashboard management system. This platform allows users to apply for multiple job positions, while recruiters can efficiently manage and review the applications along with the applicants' information. The application provides recruiters with an interface to track and monitor the progress of candidates throughout the recruitment process.
