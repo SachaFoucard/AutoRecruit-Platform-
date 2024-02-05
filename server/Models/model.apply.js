@@ -35,7 +35,7 @@ const schema = new mongoose.Schema({
   },
   resume: {
     type: String,
-    required: false
+    required: true
   },
   linkedin:{
     type: String,
